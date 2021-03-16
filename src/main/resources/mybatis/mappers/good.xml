@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="good">
+	<!-- Goods 테이블의 모든 데이터를 GoodVO 타입으로 가져오는 SQL 작성 -->
+	<select id ="goodlist" resultType="spring1218.mybatis.GoodVO">
+		select *
+		from goods
+	</select>
+	
+	<!-- 기본키를 받아서 1개의 데이터를 찾아서 리턴하는 SQL -->
+	<select id="getgood" resultType="spring1218.mybatis.GoodVO" parameterType="java.lang.Integer">
+		select *
+		from goods
+		where code = #{code}
+	</select>
+</mapper>
